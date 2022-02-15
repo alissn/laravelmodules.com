@@ -2,6 +2,7 @@
     <x-slot name="head">
         <script src="{{ mix('js/app.js') }}" defer></script>
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        <script defer data-domain="docs.laravelmodules.com" src="https://plausible.io/js/plausible.js"></script>
     </x-slot>
     <div class="bg-gray-900">
         <header class="flex justify-between max-w-screen-xl mx-auto mb-10 p-4">
