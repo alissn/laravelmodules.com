@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Getting Started",
+    "pages": [
+      "introduction",
+      "requirements",
+      "changelog",
+      "installation-and-setup",
+      "lumen",
+      "questions-and-issues"
+    ]
+  },
+  {
+    "title": "Basic Usage",
+    "pages": [
+      "configuration",
+      "compiling-assets",
+      "creating-a-module",
+      "custom-namespaces",
+      "helpers"
+    ]
+  }
+]
