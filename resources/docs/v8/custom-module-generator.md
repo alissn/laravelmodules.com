@@ -299,7 +299,7 @@ As I've said you would first need to create a base module using these placeholde
 
 ### Base Module source code
 
-You can find a complete module boilerplate at https://github.com/laravel-modules-com/base-module
+You can find a complete module boilerplate at [https://github.com/modularlaravel/base-module](https://github.com/modularlaravel/base-module)
 
 Let's build a base module here for completeness.
 
