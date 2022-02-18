@@ -19,5 +19,22 @@
       "custom-namespaces",
       "helpers"
     ]
+  },
+  {
+    "title": "Advanced",
+    "pages": [
+      "artisan-commands",
+      "facade-methods",
+      "module-console-commands",
+      "module-methods",
+      "module-resources",
+      "languages",
+      "tests",
+      "publishing-modules",
+      "registering-module-events",
+      "livewire",
+      "spatie-laravel-permission",
+      "custom-module-generator"
+    ]
   }
 ]

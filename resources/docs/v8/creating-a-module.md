@@ -1,25 +1,53 @@
 # Creating a module
 
-Creating a module is simple and straightforward. Run the following command to create a module.
+To make modules use the artisan command `php artisan module:make ModuleName` to create a module called Posts:
 
-```bash
-php artisan module:make <module-name>
+```bash 
+php artisan module:make posts
 ```
 
-Replace `<module-name>` by your desired name.
+This will create a module in the path `Modules/Posts`
 
-It is also possible to create multiple modules in one command.
+You can create multiple modules in one command by specifying the names separately:
 
 ```bash
-php artisan module:make Blog User Auth
+php artisan module:make customers contacts users invoices quotes
 ```
+
+Which would create each module.
+
+## Flags
 
 By default when you create a new module, the command will add some resources like a controller, seed class, service provider, etc. automatically. If you don't want these, you can add `--plain` flag, to generate a plain module.
 
 ```bash
 php artisan module:make Blog --plain
-# or
+```
+
+or
+
+```bash
 php artisan module:make Blog -p
+```
+
+Additional flags are as follows:
+
+Generate an api module.
+
+```bash
+php artisan module:make Blog --api
+```
+
+Do not enable the module at creation.
+
+```bash
+php artisan module:make Blog --disabled
+```
+
+or
+
+```bash
+php artisan module:make Blog -d
 ```
 
 ## Naming convention

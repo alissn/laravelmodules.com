@@ -1,5 +1,11 @@
 # Facade methods
 
+Import facade:
+
+```php
+use Nwidart\Modules\Facades\Module;
+```
+
 Get all modules.
 
 ```php
@@ -68,10 +74,49 @@ Get all enabled modules.
 Module::allEnabled();
 ```
 
+Check if mobile is enabled
+
+```php
+Module::isEnabled('ModuleName');
+```
+
 Get all disabled modules.
 
 ```php
 Module::allDisabled();
+```
+
+Check if mobile is disabled
+
+```php
+Module::isDisabled('ModuleName');
+```
+
+Enable module
+```php
+Module::enable('ModuleName');
+```
+
+Disable module
+```php
+Module::disable('ModuleName');
+```
+
+Delete module
+```php
+Module::delete('ModuleName');
+```
+
+Update dependencies for the specified module.
+
+```php
+Module::update('hello');
+```
+
+Install the specified module by given module name.
+
+```php
+Module::install('nwidart/hello');
 ```
 
 Get count of all modules.
@@ -152,18 +197,6 @@ Get asset url from specific module.
 
 ```php
 Module::asset('blog:img/logo.img');
-```
-
-Install the specified module by given module name.
-
-```php
-Module::install('nwidart/hello');
-```
-
-Update dependencies for the specified module.
-
-```php
-Module::update('hello');
 ```
 
 Add a macro to the module repository.

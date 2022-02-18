@@ -55,6 +55,8 @@ use in blade `{{ __(blog::foo) }}` will searched in:<br>
 `/lang/modules/en/foo.php`<br>
 `/Modules/Blog/Resources/lang/en/foo.php`<br>
 
+
+
 ### Factories
 
 If you want to use laravel factories you will have to add the following in your service provider:

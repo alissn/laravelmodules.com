@@ -11,7 +11,7 @@ Find out why you should use this package in the article: [Writing modular applic
 > Heads up
     If you upgrade to v6 from previous version, run the following command: `php artisan module:v6:migrate`
 
-## Upgrading from v8.3.0
+## Upgrading from v8.2.0
 
 If you have an existing config file, and you get an error:
 ```bash

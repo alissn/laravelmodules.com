@@ -18,7 +18,7 @@ php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProv
 
 ## Autoloading
 
-By default the module classes are not loaded automatically. You can autoload your modules using `psr-4`. For example :
+By default the module classes are not loaded automatically. You can autoload your modules using `psr-4`. By adding a Modules path `"Modules\\": "Modules/",` For example :
 
 ```json
 {
@@ -32,5 +32,7 @@ By default the module classes are not loaded automatically. You can autoload you
   }
 }
 ```
+
+This will load classes from the Modules namespace.
 
 **Tip: don't forget to run `composer dump-autoload` afterwards**

@@ -48,6 +48,33 @@ Enable the specified module.
 $module->enable();
 ```
 
+Check if enabled:
+
+```php
+$module->isEnabled();
+```
+
+Check if disabled:
+
+```php
+$module->isDisabled);
+```
+
+Check if the status it true or false by passing true or false:
+
+```php
+$module->IsStatus(false); //returns true if active false if is not active
+```
+
+You can also do a call in one go:
+
+```php
+Module::find('Posts')->isEnabled();
+```
+
+**Only run the one liner if you've first checked the module exists otherwise you will get an error.**
+
+
 Delete the specified module.
 
 ```php
