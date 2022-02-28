@@ -10,10 +10,22 @@ composer require nwidart/laravel-modules
 
 The package will automatically register a service provider and alias.
 
-Optionally, publish the package's configuration file by running:
+Optionally, publish the package's configuration and publish stubs by running:
 
 ```bash
 php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+```
+
+To publish only the config:
+
+```bash
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="config"
+```
+
+To publish only the stubs
+
+```bash
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="stubs"
 ```
 
 ## Autoloading
