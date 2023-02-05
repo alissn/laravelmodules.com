@@ -1,23 +1,48 @@
 # Module Console Commands
 
-Your module may contain console commands. You can generate these commands manually, or with the following helper:
+Your module may contain console commands. You can make these commands manually, or generate them with the following command:
 
 ```bash
-php artisan module:make-command CreatePostCommand Blog
+php artisan module:make-command CommandName ModuleName
 ```
 
-This will create a `CreatePostCommand` inside the Blog module. By default this will be `Modules/Blog/Console/CreatePostCommand`.
+ie
 
-Please refer to the [laravel documentation on artisan commands](https://laravel.com/docs/5.8/artisan) to learn all about them.
+```bash
+php artisan moddule:make-command ImportTicketsCommand Tickets
+```
 
-## Registering the command
+This will create an `ImportTicketsCommand` command inside the `Tickets` module located at `Modules/Tickets/Console/ImportTicketsCommand`.
 
-You can register the command with the laravel method called `commands` that is available inside a service provider class.
+Please refer to the [laravel documentation on artisan commands](https://laravel.com/docs/9.x/artisan) to learn all about them.
+
+## Registering commands
+
+In order to use custom module commands, they first need to be registered inside the module service providers `boot` method:
 
 ```php
 $this->commands([
-    \Modules\Blog\Console\CreatePostCommand::class,
+    \Modules\Tickets\Console\ImportTicketsCommand::class,
 ]);
 ```
 
 You can now access your command via `php artisan` in the console.
+
+## Schedule commands
+
+To use the Artisan's scheduler 
+
+Import `Schedule`
+
+```php
+use Illuminate\Console\Scheduling\Schedule;
+```
+
+Now inside the `boot` method called `app->booted` inside the closure make an instance of schedule then register the command to be called and its frequency.
+
+```php
+$this->app->booted(function () {
+    $schedule = $this->app->make(Schedule::class);
+    $schedule->command('tickets:import')->everyMinute();
+});
+```
