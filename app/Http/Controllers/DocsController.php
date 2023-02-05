@@ -8,7 +8,7 @@ use App\Documentation;
 
 final class DocsController
 {
-    private const DEFAULT_VERSION = 'v9';
+    private const DEFAULT_VERSION = 'v10';
     private const DEFAULT_PAGE = 'introduction';
     private const EXCLUDED = ['readme', 'license'];
 

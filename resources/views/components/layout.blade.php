@@ -41,7 +41,7 @@
                         type="button"
                         class="bg-green-500 rounded-lg px-4 py-2 ml-5"
                     >
-                        <span>V9</span>
+                        <span>V10</span>
                         <span aria-hidden="true">&darr;</span>
                     </button>
 
@@ -90,6 +90,10 @@
 
                             <a href="{{ config('app.url') }}/v9/introduction" class="block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 disabled:text-gray-500" >
                                 V9
+                            </a>
+
+                            <a href="{{ config('app.url') }}/v10/introduction" class="block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 disabled:text-gray-500" >
+                                V10
                             </a>
                         </div>
                     </div>
