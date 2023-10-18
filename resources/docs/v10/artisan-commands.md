@@ -64,6 +64,14 @@ Rollback the given module, or without an argument, rollback all modules.
 php artisan module:migrate-rollback Blog
 ```
 
+> From version 10.1
+
+To only back a specific migration use the option `--subpath` 
+
+```bash
+php artisan module:migrate-rollback --subpath="2023_10_17_101427_create_posts_table.php" Blog
+```
+
 ### module:migrate-refresh
 
 Refresh the migration for the given module, or without a specified module refresh all modules migrations.
