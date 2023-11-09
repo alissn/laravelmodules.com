@@ -48,20 +48,24 @@ import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
 import collectModuleAssetsPaths from './vite-module-loader.js';
 
-const paths = [
-    'resources/css/app.css'
-];
+async function getConfig() {
+    const paths = [
+        'resources/css/app.css',
+        'resources/js/app.js',
+    ];
+    const allPaths = await collectModuleAssetsPaths(paths, 'Modules');
 
-const allPaths = await collectModuleAssetsPaths(paths, 'Modules');
+    return defineConfig({
+        plugins: [
+            laravel({
+                input: allPaths,
+                refresh: true,
+            })
+        ]
+    });
+}
 
-export default defineConfig({
-    plugins: [
-        laravel({
-            input:  allPaths,
-            refresh: true,
-        }),
-    ],
-});
+export default getConfig();
 ```
 
 Inside the paths array set paths to any css/js files from within the resources folder.
