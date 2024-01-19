@@ -122,6 +122,14 @@ Publish the translation files for the given module, or without a specified modul
 php artisan module:publish-translation Blog
 ```
 
+### module:module:lang
+
+Check missing language keys in the specified module.
+
+```bash
+php artisan module:lang Blog
+```
+
 ### module:enable
 
 Enable the given module.
