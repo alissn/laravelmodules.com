@@ -50,6 +50,14 @@ List all available modules.
 php artisan module:list
 ```
 
+### module:show-model
+
+Provides a convenient overview of all the model's attributes and relations:
+
+```bash
+php artisan module:show-model Blog
+```
+
 ### module:migrate
 
 Migrate the given module, or without a module an argument, migrate all modules.
