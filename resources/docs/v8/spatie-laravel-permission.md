@@ -127,26 +127,26 @@ Get a specific role.
 Get all modules from permissions, use distinct to remove duplicate module names.
 
 ```php
-$role = Role::findOrFail($id);
-$modules = Permission::select('module')->distinct()->orderBy('module')->get()->toArray();
+$role             = Role::findOrFail($id);
+$permissionGroups = Permission::orderBy('module')->get()->groupBy('module');
 ```
 
-Then in a view loop over the modules array, 
+Then in a view loop over the modules array,
 
 ```php
-@foreach($modules as $module)
+@foreach($permissionGroups as $module => $permissions)
 ```
 
 Inside each loop extract their permissions, to display the module name:
 
 ```php
-Str::camel($module['module'])
+Str::camel($module)
 ```
 
 To show all permissions for the module:
 
 ```php 
-@foreach (\Spatie\Permission\Models\Permission::where('module', $module['module'])->get() as $perm)
+@foreach ($permissions as $perm)
 ```
 
 Then using the `$perm` to show the permission name `{{ $perm->name }}`
@@ -154,8 +154,8 @@ Then using the `$perm` to show the permission name `{{ $perm->name }}`
 Putting it all together without any styling:
 
 ```php
-@foreach($modules as $module)
-    <h3>{{ Str::camel($module['module']) }}</h3>
+@foreach($permissionGroups as $module => $permissions)
+    <h3>{{ Str::camel($module) }}</h3>
         
     <table>
         <thead>
@@ -164,7 +164,7 @@ Putting it all together without any styling:
             <th>Action</th>
         </tr>
         </thead>
-        @foreach (\Spatie\Permission\Models\Permission::where('module', $module['module'])->get() as $perm)
+        @foreach ($permissions as $perm)
             <tr>
                 <td>{{ $perm->name }}</td>
                 <td><input type="checkbox" name="permission[]" value="{{ $perm->id }}" {{ $role->hasPermissionTo($perm->name) ? 'checked' : null }} /></td>
